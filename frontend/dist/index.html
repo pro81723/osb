@@ -1,0 +1,74 @@
+<html lang="en"><head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <!-- Assets -->
+        <script type="module">import init from '/index-99205c12ffff9bf4.js';init('/index-99205c12ffff9bf4_bg.wasm');</script>
+        <!--========== BOX ICONS ==========-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+        <!-- ===============UNIcons================ -->
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/unicons.css">
+
+
+
+        <!--========== TAILWIND CSS ==========-->
+        <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+        <!-- IMAGES  -->
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="/index-6eaa2d56e4e7e975.css">
+        <!-- Components CSS -->
+        <link rel="stylesheet" href="/sidebar-8d8822b641bc9e0.css">
+        <link rel="stylesheet" href="/sidebarOption-a8db091edfe0cb94.css">
+        <link rel="stylesheet" href="/feed-b62fac2040c6c412.css">
+        <link rel="stylesheet" href="/widget-d69ecf020bfec92c.css">
+        <link rel="stylesheet" href="/tweet-2aae10292add4232.css">
+        <link rel="stylesheet" href="/post-3cd641f255c16eed.css">
+        <link rel="stylesheet" href="/profile-c920ca43256fdcb9.css">
+
+
+    
+<link rel="preload" href="/index-99205c12ffff9bf4_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
+<link rel="modulepreload" href="/index-99205c12ffff9bf4.js"></head>
+    <body>
+        <header>
+        </header>
+        <main>
+            
+        </main>
+        <!--========== MAIN JS ==========-->
+        <script type="module" src="assets/js/main.js"></script>
+        
+        <script data-trunk="" rel="inline" type="module" src="assets/js/main.js"></script>
+        <!-- JS Interop -->
+        <script crossorigin="false" src="assets/js/main.js"></script>
+    
+<script>(function () {
+    var url = 'ws://' + window.location.host + '/_trunk/ws';
+    var poll_interval = 5000;
+    var reload_upon_connect = () => {
+        window.setTimeout(
+            () => {
+                // when we successfully reconnect, we'll force a
+                // reload (since we presumably lost connection to
+                // trunk due to it being killed, so it will have
+                // rebuilt on restart)
+                var ws = new WebSocket(url);
+                ws.onopen = () => window.location.reload();
+                ws.onclose = reload_upon_connect;
+            },
+            poll_interval);
+    };
+
+    var ws = new WebSocket(url);
+    ws.onmessage = (ev) => {
+        const msg = JSON.parse(ev.data);
+        if (msg.reload) {
+            window.location.reload();
+        }
+    };
+    ws.onclose = reload_upon_connect;
+})()
+</script></body></html>
